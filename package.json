@@ -1,6 +1,8 @@
 {
   "name": "analysis-runner-local",
+  "type": "module",
   "scripts": {
+    "build": "tsc",
     "dev": "tsx watch src/index.ts"
   },
   "dependencies": {
@@ -9,6 +11,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
-    "tsx": "^4.7.1"
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.5"
   }
 }
