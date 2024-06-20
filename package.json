@@ -23,11 +23,17 @@
     "prettier": "@baltpeter/prettier-config",
     "dependencies": {
         "@hono/node-server": "^1.11.4",
-        "hono": "^4.4.7"
+        "@hono/zod-validator": "^0.2.2",
+        "execa": "^9.2.0",
+        "fs-extra": "^11.2.0",
+        "hono": "^4.4.7",
+        "tempy": "^3.1.0",
+        "zod": "^3.23.8"
     },
     "devDependencies": {
         "@baltpeter/eslint-config": "^2.2.0",
         "@baltpeter/prettier-config": "^3.0.0",
+        "@types/fs-extra": "^11.0.4",
         "@types/node": "^20.11.17",
         "@typescript-eslint/eslint-plugin": "^5.60.0",
         "eslint": "8.43.0",
