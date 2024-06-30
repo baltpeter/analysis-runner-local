@@ -1,0 +1,14 @@
+{
+    "target": {
+        "platform": "android",
+
+        "emulatorName": "analysis11",
+        "snapshotName": "clean"
+    },
+
+    "analysisResultUrl": "http://10.0.0.10:4321/private-api/analysis-result",
+    "token": "8bea3ca29436b907be3a5087bdd9b9cd36cdc96308f53c05a5be7629b9ebc651",
+
+    "analysisDurationMs": 60000,
+    "logLevel": "info"
+}

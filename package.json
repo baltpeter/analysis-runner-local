@@ -1,17 +1,61 @@
 {
-  "name": "analysis-runner-local",
-  "type": "module",
-  "scripts": {
-    "build": "tsc",
-    "dev": "tsx watch src/index.ts"
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.11.4",
-    "hono": "^4.4.7"
-  },
-  "devDependencies": {
-    "@types/node": "^20.11.17",
-    "tsx": "^4.7.1",
-    "typescript": "^5.4.5"
-  }
+    "name": "analysis-runner-local",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsx watch src/index.ts",
+        "lint": "tsc --noEmit && eslint . --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx && git diff --check"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged && tsc"
+        }
+    },
+    "lint-staged": {
+        "*.{ts,js,tsx,jsx,css,scss,json,astro}": [
+            "prettier --write"
+        ],
+        "*.{ts,js,tsx,jsx}": [
+            "eslint --fix"
+        ]
+    },
+    "prettier": "@baltpeter/prettier-config",
+    "dependencies": {
+        "@hono/node-server": "^1.11.4",
+        "@hono/zod-validator": "^0.2.2",
+        "better-queue": "^3.8.12",
+        "better-queue-sql": "^1.0.6",
+        "cyanoacrylate": "^1.2.0",
+        "execa": "^9.2.0",
+        "fs-extra": "^11.2.0",
+        "hono": "^4.4.7",
+        "nanoid": "^5.0.7",
+        "package-up": "^5.0.0",
+        "sqlite3": "^5.1.7",
+        "tempy": "^3.1.0",
+        "trackhar": "^0.5.1",
+        "winston": "^3.13.0",
+        "winston-console-format": "^1.0.8",
+        "zod": "^3.23.8"
+    },
+    "devDependencies": {
+        "@baltpeter/eslint-config": "^2.2.0",
+        "@baltpeter/prettier-config": "^3.0.0",
+        "@types/better-queue": "^3.8.6",
+        "@types/fs-extra": "^11.0.4",
+        "@types/node": "^20.11.17",
+        "@typescript-eslint/eslint-plugin": "^5.60.0",
+        "eslint": "8.43.0",
+        "eslint-plugin-eslint-comments": "3.2.0",
+        "eslint-plugin-import": "2.27.5",
+        "husky": "4.3.7",
+        "lint-staged": "^15.2.7",
+        "prettier": "^3.3.2",
+        "tsx": "^4.7.1",
+        "typescript": "5.1.6"
+    },
+    "engines": {
+        "node": "~18"
+    }
 }
