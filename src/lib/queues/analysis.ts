@@ -24,7 +24,6 @@ const analysis = await startAnalysis(
                       headless: config.target.headless !== false,
                       audio: false,
                       ephemeral: true,
-                      stopWithAnalysis: false,
                   },
                   snapshotName: config.target.snapshotName,
               },
